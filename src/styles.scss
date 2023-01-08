@@ -1,0 +1,72 @@
+/**
+* Variables
+*/
+
+@use "base";
+@use "mixins";
+@use "colors";
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid colors.$color-black;
+  border-radius: 5px;
+  background-color: colors.$color-white;
+  color: colors.$color-white;
+}
+
+.btn-info {
+  background-color: colors.$color-dark-gray;
+}
+.btn-alert {
+  background-color: colors.$color-dark-red;
+}
+.btn-success {
+  background-color: colors.$color-dark-green;
+}
+
+/**
+* Extend/ Inheritance
+*/
+
+%message-shared {
+  border: 1px solid colors.$primary-border-color;
+  padding: 10px;
+  color: colors.$primary-color;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: colors.$color-green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: colors.$color-red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: colors.$color-yellow;
+}
